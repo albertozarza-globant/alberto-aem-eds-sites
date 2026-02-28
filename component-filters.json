@@ -15,7 +15,15 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "accordion",
+      "tabs",
+      "gallery",
+      "cta",
+      "pricing",
+      "testimonials",
+      "logo-cloud",
+      "stats"
     ]
   },
   {
@@ -37,6 +45,48 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
+    "id": "tabs",
+    "components": [
+      "tab-item"
+    ]
+  },
+  {
+    "id": "gallery",
+    "components": [
+      "gallery-item"
+    ]
+  },
+  {
+    "id": "pricing",
+    "components": [
+      "pricing-plan"
+    ]
+  },
+  {
+    "id": "testimonials",
+    "components": [
+      "testimonial"
+    ]
+  },
+  {
+    "id": "logo-cloud",
+    "components": [
+      "logo-item"
+    ]
+  },
+  {
+    "id": "stats",
+    "components": [
+      "stat-item"
     ]
   }
 ]

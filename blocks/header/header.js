@@ -4,10 +4,48 @@ import { loadFragment } from '../fragment/fragment.js';
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
+const normalizePath = (pathname) => {
+  if (!pathname || pathname === '/') return '/';
+  return pathname.endsWith('/') ? pathname.slice(0, -1) : pathname;
+};
+
+function markActiveNavItem(navSections) {
+  if (!navSections) return;
+
+  const currentPath = normalizePath(window.location.pathname);
+  const eligibleLinks = [...navSections.querySelectorAll('a[href]')]
+    .map((link) => {
+      const url = new URL(link.getAttribute('href'), window.location.href);
+      const linkPath = normalizePath(url.pathname);
+      const isMatch = url.origin === window.location.origin
+        && (linkPath === currentPath || (linkPath !== '/' && currentPath.startsWith(`${linkPath}/`)));
+      return { link, linkPath, isMatch };
+    })
+    .filter(({ isMatch }) => isMatch)
+    .sort((a, b) => b.linkPath.length - a.linkPath.length);
+
+  if (eligibleLinks.length > 0) {
+    const { link } = eligibleLinks[0];
+    link.setAttribute('aria-current', 'page');
+    link.closest('li')?.classList.add('is-active');
+  }
+}
+
+function bindScrolledState(navWrapper) {
+  const toggleScrolled = () => {
+    navWrapper.classList.toggle('is-scrolled', window.scrollY > 12);
+  };
+
+  toggleScrolled();
+  window.addEventListener('scroll', toggleScrolled, { passive: true });
+}
+
 function closeOnEscape(e) {
   if (e.code === 'Escape') {
     const nav = document.getElementById('nav');
+    if (!nav) return;
     const navSections = nav.querySelector('.nav-sections');
+    if (!navSections) return;
     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
@@ -23,8 +61,10 @@ function closeOnEscape(e) {
 
 function closeOnFocusLost(e) {
   const nav = e.currentTarget;
+  if (!nav) return;
   if (!nav.contains(e.relatedTarget)) {
     const navSections = nav.querySelector('.nav-sections');
+    if (!navSections) return;
     const navSectionExpanded = navSections.querySelector('[aria-expanded="true"]');
     if (navSectionExpanded && isDesktop.matches) {
       // eslint-disable-next-line no-use-before-define
@@ -38,7 +78,7 @@ function closeOnFocusLost(e) {
 
 function openOnKeydown(e) {
   const focused = document.activeElement;
-  const isNavDrop = focused.className === 'nav-drop';
+  const isNavDrop = focused?.classList?.contains('nav-drop');
   if (isNavDrop && (e.code === 'Enter' || e.code === 'Space')) {
     const dropExpanded = focused.getAttribute('aria-expanded') === 'true';
     // eslint-disable-next-line no-use-before-define
@@ -57,7 +97,7 @@ function focusNavSection() {
  * @param {Boolean} expanded Whether the element should be expanded or collapsed
  */
 function toggleAllNavSections(sections, expanded = false) {
-  sections.querySelectorAll('.nav-sections .default-content-wrapper > ul > li').forEach((section) => {
+  sections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((section) => {
     section.setAttribute('aria-expanded', expanded);
   });
 }
@@ -69,6 +109,7 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
 function toggleMenu(nav, navSections, forceExpanded = null) {
+  if (!navSections) return;
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
@@ -144,6 +185,12 @@ export default async function decorate(block) {
         }
       });
     });
+
+    navSections.querySelectorAll('a[href]').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (!isDesktop.matches) toggleMenu(nav, navSections, false);
+      });
+    });
   }
 
   // hamburger for mobile
@@ -163,4 +210,7 @@ export default async function decorate(block) {
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  markActiveNavItem(navSections);
+  bindScrolledState(navWrapper);
 }

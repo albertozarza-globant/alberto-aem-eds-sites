@@ -1,1 +1,44 @@
 /* add global styles that can be loaded post LCP here */
+
+main ul,
+main ol {
+  padding-left: 1.25em;
+}
+
+main li + li {
+  margin-top: 0.35em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes section-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  main > .section[data-section-status='loaded'] {
+    animation: section-fade-up 0.5s ease both;
+  }
+
+  main > .section[data-section-status='loaded'] .cards > ul > li {
+    animation: section-fade-up 0.55s ease both;
+  }
+
+  main > .section[data-section-status='loaded'] .cards > ul > li:nth-child(2) {
+    animation-delay: 0.05s;
+  }
+
+  main > .section[data-section-status='loaded'] .cards > ul > li:nth-child(3) {
+    animation-delay: 0.1s;
+  }
+
+  main > .section[data-section-status='loaded'] .cards > ul > li:nth-child(4) {
+    animation-delay: 0.15s;
+  }
+}

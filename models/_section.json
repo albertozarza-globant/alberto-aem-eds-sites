@@ -50,7 +50,15 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "accordion",
+        "tabs",
+        "gallery",
+        "cta",
+        "pricing",
+        "testimonials",
+        "logo-cloud",
+        "stats"
       ]
     }
   ]

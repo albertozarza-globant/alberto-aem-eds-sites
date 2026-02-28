@@ -156,6 +156,231 @@
               }
             }
           }
+        },
+        {
+          "title": "Accordion",
+          "id": "accordion",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Accordion",
+                  "filter": "accordion"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Accordion Item",
+          "id": "accordion-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Accordion Item",
+                  "model": "accordion-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs",
+          "id": "tabs",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Tabs",
+                  "filter": "tabs"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tab Item",
+          "id": "tab-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab Item",
+                  "model": "tab-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Gallery",
+          "id": "gallery",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Gallery",
+                  "filter": "gallery"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Gallery Item",
+          "id": "gallery-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Gallery Item",
+                  "model": "gallery-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "CTA",
+          "id": "cta",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "CTA",
+                  "model": "cta"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Pricing",
+          "id": "pricing",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Pricing",
+                  "filter": "pricing"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Pricing Plan",
+          "id": "pricing-plan",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Pricing Plan",
+                  "model": "pricing-plan"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Testimonials",
+          "id": "testimonials",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Testimonials",
+                  "filter": "testimonials"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Testimonial",
+          "id": "testimonial",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Testimonial",
+                  "model": "testimonial"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Logo Cloud",
+          "id": "logo-cloud",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Logo Cloud",
+                  "filter": "logo-cloud"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Logo",
+          "id": "logo-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Logo",
+                  "model": "logo-item"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Stats",
+          "id": "stats",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Stats",
+                  "filter": "stats"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Stat",
+          "id": "stat-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Stat",
+                  "model": "stat-item"
+                }
+              }
+            }
+          }
         }
       ]
     }
