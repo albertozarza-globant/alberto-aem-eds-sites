@@ -36,10 +36,6 @@
   padding: 1.35rem 1.25rem 1.4rem;
 }
 
-.cards .cards-card-body p:last-child {
-  margin-bottom: 0;
-}
-
 .cards .cards-card-body > :first-child {
   margin-top: 0;
 }
@@ -51,6 +47,10 @@
 .cards .cards-card-body > p {
   color: var(--text-muted);
   font-size: var(--body-font-size-s);
+}
+
+.cards .cards-card-body p:last-child {
+  margin-bottom: 0;
 }
 
 .cards .cards-card-body a:any-link:not(.button) {

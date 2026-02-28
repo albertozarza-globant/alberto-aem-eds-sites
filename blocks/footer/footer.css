@@ -54,23 +54,23 @@ footer .footer .button:any-link {
 }
 
 @media (width >= 900px) {
+  footer .footer > div {
+    padding: 64px 32px 34px;
+  }
+
   footer .footer > div > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
   }
-
-  footer .footer > div {
-    padding: 64px 32px 34px;
-  }
 }
 
 @media (width >= 1200px) {
-  footer .footer > div > div {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   footer .footer > div {
     padding-right: 44px;
     padding-left: 44px;
+  }
+
+  footer .footer > div > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

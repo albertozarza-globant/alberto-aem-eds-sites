@@ -75,6 +75,14 @@
 }
 
 @media (width >= 900px) {
+  .columns > div > div {
+    order: unset;
+  }
+
+  .columns > div > .columns-img-col {
+    order: unset;
+  }
+
   .columns.columns-2-cols > div {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: center;
@@ -83,14 +91,6 @@
 
   .columns.columns-3-cols > div {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .columns > div > div {
-    order: unset;
-  }
-
-  .columns > div > .columns-img-col {
-    order: unset;
   }
 
   .columns.alternating.columns-2-cols > .columns-row.columns-row-odd > .columns-img-col {
