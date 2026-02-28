@@ -1,12 +1,12 @@
 {
   "mappings": [
-     "/content/alberto-zarza/:/",
-    "/content/alberto-zarza/en/:/",
-    "/content/alberto-zarza/es:/es",
-    "/content/alberto-zarza/es/:/es/"
+     "/content/alberto-zaza-eds/:/",
+    "/content/alberto-zaza-eds/en/:/",
+    "/content/alberto-zaza-eds/es:/es",
+    "/content/alberto-zaza-eds/es/:/es/"
   ],
   "includes": [
-    "/content/alberto-zarza/",
-    "/content/dam/alberto-zarza/"
+    "/content/alberto-zaza-eds/",
+    "/content/dam/alberto-zaza-eds/"
   ]
 }
