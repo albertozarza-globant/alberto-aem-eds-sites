@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p82002-e707352.adobeaemcloud.com/bin/franklin.delivery/albertozarza-globant/alberto-aem-eds-sites/main"
+    url: "https://author-p82002-e707352.adobeaemcloud.com/bin/franklin.delivery/albertozarza-globant/alberto-zarza-eds/main"
     type: "markup"
     suffix: ".html"
