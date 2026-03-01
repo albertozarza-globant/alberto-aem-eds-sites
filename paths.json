@@ -1,9 +1,8 @@
 {
   "mappings": [
     "/content/alberto-zarza-eds/:/",
-    "/content/alberto-zarza-eds/en/:/en/",
-        "/content/alberto-zarza-eds/es:/es",
-    "/content/alberto-zarza-eds/es/:/es/",
+    "/content/alberto-zarza-eds/en:/en/",
+    "/content/alberto-zarza-eds/es:/es/",
     "/content/alberto-zarza-eds/configuration:/.helix/config.json",
     "/content/alberto-zarza-eds/headers:/.helix/headers.json"
   ],
